@@ -1,0 +1,22 @@
+последнее просмотренное 4-2
+
+
+igor@igor-VirtualBoxK:~/Projects/food-ordering-system/infrastructure/docker-compose$ docker-compose -f common.yml -f zookeeper.yml up
+----------проверка если зукипер жив?
+igor@igor-VirtualBoxK:~$ echo ruok | nc localhost 2181
+imoki
+
+-------поднимаем кластер
+igor@igor-VirtualBoxK:~/Projects/food-ordering-system/infrastructure/docker-compose$ docker-compose -f common.yml -f kafka_cluster.yml up
+
+---инит кафка
+igor@igor-VirtualBoxK:~/Projects/food-ordering-system/infrastructure/docker-compose$ docker-compose -f common.yml -f init_kafka.yml up
+
+---
+http://localhost:9000/
+ADDD
+Clusters
+food-ordering-system-cluster
+
+Zookeepers	zookeeper:2181
+Version	2.4.0
